@@ -1,0 +1,36 @@
+{
+  "name": "com.example.hello2",
+  "displayName": "Qmobot_interview",
+  "version": "1.0.0",
+  "description": "A sample Apache Cordova application that responds to the deviceready event.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "ecosystem:cordova"
+  ],
+  "author": "Apache Cordova Team",
+  "license": "Apache-2.0",
+  "devDependencies": {
+    "cordova-android": "^9.0.0",
+    "cordova-browser": "^6.0.0",
+    "cordova-plugin-speechrecognition": "^1.2.0",
+    "cordova-plugin-tts": "^0.2.3",
+    "cordova-plugin-tts-advanced": "^0.4.1",
+    "cordova-plugin-whitelist": "^1.3.4",
+    "cz.blocshop.socketsforcordova": "^1.1.0"
+  },
+  "cordova": {
+    "plugins": {
+      "cordova-plugin-whitelist": {},
+      "cz.blocshop.socketsforcordova": {},
+      "cordova-plugin-speechrecognition": {},
+      "cordova-plugin-tts": {}
+    },
+    "platforms": [
+      "android",
+      "browser"
+    ]
+  }
+}

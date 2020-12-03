@@ -2,8 +2,8 @@
 #include <WiFi.h>
 
 
-const char* ssid = "QMOBOT3";
-const char* password = "12345678";
+const char* ssid = "NU";
+const char* password = "1234512345";
 
 WiFiServer wifiServer(80);
 
@@ -53,13 +53,19 @@ void setup() {
   erase();
   stop();
   
-  WiFi.softAP(ssid, password);
-  delay(1000);
+  WiFi.begin(ssid, password);
+ 
+  while (WiFi.status() != WL_CONNECTED) {
+    delay(500);
+    Serial.println("Connecting to WiFi..");
+  }
+ 
+  Serial.println("Connected to the WiFi network");
   
   wifiServer.begin();
 
-  IPAddress IP = WiFi.softAPIP();
-  Serial.print("AP IP address: ");
+  IPAddress IP = WiFi.localIP();
+  Serial.print("IP address: ");
   Serial.println(IP);
 
   show("QMOBOT.COM", 30, 30);
@@ -76,7 +82,7 @@ void loop() {
       while (client.available()>0) {
         char c = client.read();
         Serial.println(c);
-        // run_it(c);
+        run_it(c);
         client.write(c);
       }
       delay(10);
